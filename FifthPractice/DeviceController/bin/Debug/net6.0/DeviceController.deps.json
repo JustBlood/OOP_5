@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "DeviceController/1.0.0": {
+        "dependencies": {
+          "MeasuringDevice": "1.0.0"
+        },
+        "runtime": {
+          "DeviceController.dll": {}
+        }
+      },
+      "MeasuringDevice/1.0.0": {
+        "runtime": {
+          "MeasuringDevice.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DeviceController/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MeasuringDevice/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,15 @@
+C:\Users\User\AllMine\уник\2 курс\4 квартиль\ООП\FifthPractice\DeviceController\bin\Debug\net6.0\Controllers.deps.json
+C:\Users\User\AllMine\уник\2 курс\4 квартиль\ООП\FifthPractice\DeviceController\bin\Debug\net6.0\Controllers.dll
+C:\Users\User\AllMine\уник\2 курс\4 квартиль\ООП\FifthPractice\DeviceController\bin\Debug\net6.0\Controllers.pdb
+C:\Users\User\AllMine\уник\2 курс\4 квартиль\ООП\FifthPractice\DeviceController\bin\Debug\net6.0\MeasuringDevice.dll
+C:\Users\User\AllMine\уник\2 курс\4 квартиль\ООП\FifthPractice\DeviceController\bin\Debug\net6.0\MeasuringDevice.pdb
+C:\Users\User\AllMine\уник\2 курс\4 квартиль\ООП\FifthPractice\DeviceController\obj\Debug\net6.0\Controllers.csproj.AssemblyReference.cache
+C:\Users\User\AllMine\уник\2 курс\4 квартиль\ООП\FifthPractice\DeviceController\obj\Debug\net6.0\Controllers.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\AllMine\уник\2 курс\4 квартиль\ООП\FifthPractice\DeviceController\obj\Debug\net6.0\Controllers.AssemblyInfoInputs.cache
+C:\Users\User\AllMine\уник\2 курс\4 квартиль\ООП\FifthPractice\DeviceController\obj\Debug\net6.0\Controllers.AssemblyInfo.cs
+C:\Users\User\AllMine\уник\2 курс\4 квартиль\ООП\FifthPractice\DeviceController\obj\Debug\net6.0\Controllers.csproj.CoreCompileInputs.cache
+C:\Users\User\AllMine\уник\2 курс\4 квартиль\ООП\FifthPractice\DeviceController\obj\Debug\net6.0\Controllers.csproj.CopyComplete
+C:\Users\User\AllMine\уник\2 курс\4 квартиль\ООП\FifthPractice\DeviceController\obj\Debug\net6.0\Controllers.dll
+C:\Users\User\AllMine\уник\2 курс\4 квартиль\ООП\FifthPractice\DeviceController\obj\Debug\net6.0\refint\Controllers.dll
+C:\Users\User\AllMine\уник\2 курс\4 квартиль\ООП\FifthPractice\DeviceController\obj\Debug\net6.0\Controllers.pdb
+C:\Users\User\AllMine\уник\2 курс\4 квартиль\ООП\FifthPractice\DeviceController\obj\Debug\net6.0\ref\Controllers.dll

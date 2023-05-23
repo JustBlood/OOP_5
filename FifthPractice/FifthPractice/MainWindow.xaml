@@ -1,0 +1,41 @@
+﻿<Window x:Class="FifthPractice.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FifthPractice"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:measure="clr-namespace:MeasuringDevice;assembly=MeasuringDevice"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <local:MainViewModel />
+    </Window.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" x:Name="Legend0"></ColumnDefinition>
+            <ColumnDefinition Width="1*" x:Name="Legend1"></ColumnDefinition>
+            <ColumnDefinition Width="4*" x:Name="Data"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <Label Content="Выберите тип&#10;девайса:" Grid.Row="0" Grid.Column="0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+        <Label Content="Выберите меру&#10;измерения:" Grid.Row="0" Grid.Column="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"></Label>
+        <ComboBox x:Name="deviceType" Grid.Row="1" Grid.Column="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="10 15" ItemsSource="{Binding Source={local:EnumBindingSource {x:Type measure:DeviceType}}}" />
+        <ComboBox x:Name="deviceUnits" Grid.Row="1" Grid.Column="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="10 15" ItemsSource="{Binding Source={local:EnumBindingSource {x:Type measure:Units}}}"/>
+        <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="50 15" Content="Создать контроллер девайса" Click="CreateController_Click" />
+        <Button x:Name="startMeasurementsButton" Grid.Row="3" Grid.Column="0" Margin="10 15" Content="Начать измерения" Click="startMeasurementsButton_Click" />
+        <Button x:Name="stopMeasurementsButton" Grid.Row="3" Grid.Column="1" Margin="10 10" Content="Закончить&#10;измерения" Click="stopMeasurementsButton_Click" />
+        <Button x:Name="getMetric" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Margin="10 10" Content="Взять последнее измерение в Metric" Click="getMetric_Click" />
+        <Button x:Name="getImperial" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Margin="10 10" Content="Взять последнее измерение в Imperial" Click="getImperial_Click" />
+        <Button x:Name="getRecent" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Margin="10 10" Content="Взять сырое последнее измерение" Click="getRecent_Click" />
+        <ListBox x:Name="data" Margin="30 10" Grid.Row="0" Grid.Column="2" Grid.RowSpan="7" SelectedIndex="0"></ListBox>
+    </Grid>
+</Window>

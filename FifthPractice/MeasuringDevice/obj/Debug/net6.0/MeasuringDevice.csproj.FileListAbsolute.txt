@@ -1,0 +1,12 @@
+C:\Users\User\AllMine\уник\2 курс\4 квартиль\ООП\FifthPractice\MeasuringDevice\bin\Debug\net6.0\MeasuringDevice.deps.json
+C:\Users\User\AllMine\уник\2 курс\4 квартиль\ООП\FifthPractice\MeasuringDevice\bin\Debug\net6.0\MeasuringDevice.dll
+C:\Users\User\AllMine\уник\2 курс\4 квартиль\ООП\FifthPractice\MeasuringDevice\bin\Debug\net6.0\MeasuringDevice.pdb
+C:\Users\User\AllMine\уник\2 курс\4 квартиль\ООП\FifthPractice\MeasuringDevice\obj\Debug\net6.0\MeasuringDevice.csproj.AssemblyReference.cache
+C:\Users\User\AllMine\уник\2 курс\4 квартиль\ООП\FifthPractice\MeasuringDevice\obj\Debug\net6.0\MeasuringDevice.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\AllMine\уник\2 курс\4 квартиль\ООП\FifthPractice\MeasuringDevice\obj\Debug\net6.0\MeasuringDevice.AssemblyInfoInputs.cache
+C:\Users\User\AllMine\уник\2 курс\4 квартиль\ООП\FifthPractice\MeasuringDevice\obj\Debug\net6.0\MeasuringDevice.AssemblyInfo.cs
+C:\Users\User\AllMine\уник\2 курс\4 квартиль\ООП\FifthPractice\MeasuringDevice\obj\Debug\net6.0\MeasuringDevice.csproj.CoreCompileInputs.cache
+C:\Users\User\AllMine\уник\2 курс\4 квартиль\ООП\FifthPractice\MeasuringDevice\obj\Debug\net6.0\MeasuringDevice.dll
+C:\Users\User\AllMine\уник\2 курс\4 квартиль\ООП\FifthPractice\MeasuringDevice\obj\Debug\net6.0\refint\MeasuringDevice.dll
+C:\Users\User\AllMine\уник\2 курс\4 квартиль\ООП\FifthPractice\MeasuringDevice\obj\Debug\net6.0\MeasuringDevice.pdb
+C:\Users\User\AllMine\уник\2 курс\4 квартиль\ООП\FifthPractice\MeasuringDevice\obj\Debug\net6.0\ref\MeasuringDevice.dll

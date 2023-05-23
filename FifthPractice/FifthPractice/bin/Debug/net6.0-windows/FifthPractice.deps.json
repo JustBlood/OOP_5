@@ -1,0 +1,50 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "FifthPractice/1.0.0": {
+        "dependencies": {
+          "Controllers": "1.0.0",
+          "MeasuringDevice": "1.0.0"
+        },
+        "runtime": {
+          "FifthPractice.dll": {}
+        }
+      },
+      "Controllers/1.0.0": {
+        "dependencies": {
+          "MeasuringDevice": "1.0.0"
+        },
+        "runtime": {
+          "Controllers.dll": {}
+        }
+      },
+      "MeasuringDevice/1.0.0": {
+        "runtime": {
+          "MeasuringDevice.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "FifthPractice/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Controllers/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MeasuringDevice/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
