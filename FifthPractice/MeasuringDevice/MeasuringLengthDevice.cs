@@ -25,23 +25,5 @@ namespace MeasuringDevice
             IsCollecting = true;
             StartMeasurements();
         }
-
-        private void StartMeasurements()
-        {
-            DataCaptured = new List<int>();
-            Thread thread = new Thread(() =>
-            {
-                Random timer = new Random();
-
-                while (IsCollecting)
-                {
-                    Thread.Sleep(timer.Next(1000, 5000));
-                    DataCaptured.Add(timer.Next(0, 100));
-                }
-            });
-            thread.IsBackground = true;
-            thread.Start();
-        }
-
     }
 }

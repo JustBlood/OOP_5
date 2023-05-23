@@ -13,6 +13,7 @@ namespace FifthPractice
     /// </summary>
     public partial class MainWindow : Window
     {
+        private EventHandler newMeasurementTaken;
         MainViewModel ViewModel { get; set; }
         DispatcherTimer Timer { get; set; }
         public MainWindow()
@@ -26,16 +27,16 @@ namespace FifthPractice
             getMetric.Visibility = Visibility.Hidden;
             getImperial.Visibility = Visibility.Hidden;
             getRecent.Visibility = Visibility.Hidden;
-            Timer = new DispatcherTimer();
-            Timer.Tick += OnTick;
-            Timer.Interval = new TimeSpan(0, 0, 0, 1);
-            Timer.Start();
+            //Timer = new DispatcherTimer();
+            //Timer.Tick += OnTick;
+            //Timer.Interval = new TimeSpan(0, 0, 0, 1);
+            //Timer.Start();
         }
 
-        private void OnTick(object sender, EventArgs e)
+        // prev implementation
+        private async void OnTick(object sender, EventArgs e)
         {
-            data.Items.Refresh();
-            
+            data.Items.Refresh();  
         }
 
         private void CreateController_Click(object sender, RoutedEventArgs e)
@@ -65,20 +66,29 @@ namespace FifthPractice
         private void startMeasurementsButton_Click(object sender, RoutedEventArgs e)
         {
             ViewModel.Controller.StartDevice();
-            
+            newMeasurementTaken = new EventHandler(device_NewMeasurementTaken);
+            ViewModel.Controller.Device.NewMeasurementTaken += newMeasurementTaken;
             data.ItemsSource = ViewModel.Controller.Device.GetRawData();
-            //var timer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(2) };
-            //timer.Start();
-            //timer.Tick += (sender, args) =>
-            //{
-            //    data.UpdateLayout();
-            //};
+        }
+
+        private void device_NewMeasurementTaken(object? sender, EventArgs e)
+        {
+            if (ViewModel.Controller.Device is not null)
+            {
+                data.Items.Refresh();
+            }
         }
 
         private void stopMeasurementsButton_Click(object sender, RoutedEventArgs e)
         {
             ViewModel.Controller.StopDevice();
             ViewModel.Measurements = ViewModel.Controller.Device.GetRawData();
+            ViewModel.Controller.Device.Dispose();
+            startMeasurementsButton.Visibility = Visibility.Hidden;
+            stopMeasurementsButton.Visibility = Visibility.Hidden;
+            getMetric.Visibility = Visibility.Hidden;
+            getImperial.Visibility = Visibility.Hidden;
+            getRecent.Visibility = Visibility.Hidden;
         }
 
         private void getMetric_Click(object sender, RoutedEventArgs e)
