@@ -65,6 +65,11 @@ namespace FifthPractice
 
         private void startMeasurementsButton_Click(object sender, RoutedEventArgs e)
         {
+            ViewModel.Controller.Device.HeartBeat += (o, args) => 
+            {
+                string content = "HeartBeat\nTimestamp:\n" + args.TimeStamp;
+                heartBeatTimeStamp.Content = content;
+            };
             ViewModel.Controller.StartDevice();
             newMeasurementTaken = new EventHandler(device_NewMeasurementTaken);
             ViewModel.Controller.Device.NewMeasurementTaken += newMeasurementTaken;

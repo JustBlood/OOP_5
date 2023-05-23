@@ -16,6 +16,7 @@
             <ColumnDefinition Width="1*" x:Name="Legend0"></ColumnDefinition>
             <ColumnDefinition Width="1*" x:Name="Legend1"></ColumnDefinition>
             <ColumnDefinition Width="4*" x:Name="Data"></ColumnDefinition>
+            <ColumnDefinition Width="1*" x:Name="HeartBeat"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*" />
@@ -37,5 +38,6 @@
         <Button x:Name="getImperial" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Margin="10 10" Content="Взять последнее измерение в Imperial" Click="getImperial_Click" />
         <Button x:Name="getRecent" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Margin="10 10" Content="Взять сырое последнее измерение" Click="getRecent_Click" />
         <ListBox x:Name="data" Margin="30 10" Grid.Row="0" Grid.Column="2" Grid.RowSpan="7" SelectedIndex="0"></ListBox>
+        <Label x:Name="heartBeatTimeStamp" Grid.Column="4" Content="HeartBeat&#10;TimeStamp:" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"></Label>
     </Grid>
 </Window>

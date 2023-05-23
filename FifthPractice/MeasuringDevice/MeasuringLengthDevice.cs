@@ -10,9 +10,11 @@ namespace MeasuringDevice
     public class MeasuringLengthDevice
         : MeasureDataDevice
     {
-        public MeasuringLengthDevice(Units unitsToUse) : base(unitsToUse)
+        public MeasuringLengthDevice(Units unitsToUse, int heartBeatInterval = 1000, string logFileName = "measurements.log") : base(unitsToUse)
         {
             MeasurementType = DeviceType.LENGTH;
+            HeartBeatInterval = heartBeatInterval;
+            LoggingFileName = logFileName;
         }
 
         public override List<int> GetRawData()

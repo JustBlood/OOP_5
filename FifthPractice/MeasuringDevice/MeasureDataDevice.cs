@@ -9,8 +9,10 @@ namespace MeasuringDevice
 {
     public abstract class MeasureDataDevice : IEventEnabledMeasuringDevice, IDisposable
     {
+        private BackgroundWorker heartBeatTimer;
         private BackgroundWorker dataCollector;
         private StreamWriter loggingFileWriter;
+        public bool Disposed { get; set; } = false;
         protected bool IsCollecting { get; set; }
         public Units UnitsToUse { get; }
         protected List<int> DataCaptured { get; set; }
@@ -18,8 +20,11 @@ namespace MeasuringDevice
         public DeviceType MeasurementType { get; protected set; }
 
         public string LoggingFileName { get; set; }
+        public int HeartBeatInterval { get; set; }
 
         public event EventHandler NewMeasurementTaken;
+        public event HeartBeatEventHandler HeartBeat;
+
         public MeasureDataDevice(Units unitsToUse)
         {
             UnitsToUse = unitsToUse;
@@ -96,8 +101,38 @@ namespace MeasuringDevice
             }
         }
 
+        private void OnHeartBeat()
+        {
+            if (HeartBeat.GetInvocationList().Length > 0)
+            {
+                HeartBeat.Invoke(this, new HeartBeatEventArgs());
+            }
+        }
+
+        private void StartHeartBeat()
+        {
+            heartBeatTimer = new BackgroundWorker();
+            heartBeatTimer.WorkerSupportsCancellation = true;
+            heartBeatTimer.WorkerReportsProgress = true;
+            heartBeatTimer.DoWork += (o, args) =>
+            {
+                while(true)
+                {
+                    Thread.Sleep(HeartBeatInterval);
+                    if (Disposed) return;
+                    heartBeatTimer.ReportProgress(0);
+                }
+            };
+            heartBeatTimer.ProgressChanged += (o, e) =>
+            {
+                OnHeartBeat();
+            };
+            heartBeatTimer.RunWorkerAsync();
+        }
+
         protected void StartMeasurements()
         {
+            StartHeartBeat();
             DataCaptured = new List<int>();
             loggingFileWriter = new StreamWriter(LoggingFileName);
             dataCollector = new BackgroundWorker();
@@ -148,9 +183,20 @@ namespace MeasuringDevice
 
         public void Dispose()
         {
+            Disposed = true;
             if (dataCollector is not null)
             {
                 dataCollector.Dispose();
+            }
+            if (loggingFileWriter is not null)
+            {
+                loggingFileWriter.Close();
+                loggingFileWriter.Dispose();
+            }
+            if (heartBeatTimer is not null)
+            {
+                heartBeatTimer.CancelAsync();
+                heartBeatTimer.Dispose();
             }
         }
     }
